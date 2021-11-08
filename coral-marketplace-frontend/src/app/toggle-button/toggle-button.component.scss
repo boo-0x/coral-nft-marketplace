@@ -1,0 +1,62 @@
+@import '../../assets/scss/variable.scss';
+
+:host {
+    display: block;
+    position: relative;
+    width: 60px;
+}
+
+input[type="checkbox"] {
+    display: none; 
+}
+
+.toggle-button-switch {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    width: 26px;
+    height: 26px;
+    background-color: $primary;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 100;
+    transition: left 0.3s;
+}
+
+.toggle-button-text {
+    overflow: hidden;
+    background-color: $bg-dark-secondary;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.toggle-button-text-on,
+.toggle-button-text-off {
+    float: left;
+    width: 50%;
+    height: 100%;
+    line-height: 31px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.toggle-button-text-on svg {
+    position: relative;
+    bottom: 1px;
+    fill: $color-dimmed;
+    left: 2px;
+}
+
+.toggle-button-text-off svg {
+    position: relative;
+    bottom: 1px;
+    fill: $color-dark;
+}
+
+input[type="checkbox"]:checked ~ .toggle-button-switch {
+    left: 32px;
+}
+
+input[type="checkbox"]:checked ~ .toggle-button-text {
+    background-color: $bg-light;
+}

@@ -1,0 +1,82 @@
+{
+    "app-title": "Coral Marketplace",
+    "common": {
+        "accept": "Accept",
+        "cancel": "Cancel",
+        "save": "Save",
+        "edit": "Edit",
+        "confirm": "Confirm"
+    },
+    "header": {
+        "market": "Market",
+        "create": "Create",
+        "created": "My creations",
+        "my-nfts": "My NFTs",
+        "my-nfts-on-sale": "My sales",
+        "select-account": "Select account"
+    },
+    "create-form": {
+        "service-fee": "Service fee",
+        "upload-image": "Upload image",
+        "supported-formats": "Supported formats",
+        "max-size": "Max size",
+        "create": "Create",
+        "upload-an-image": "You have to upload an image."
+    },
+    "market": {
+        "buy": "Buy",
+        "view": "View"
+    },
+    "nft": {
+        "owner": "Owner",
+        "seller": "Seller",
+        "creator": "Creator",
+        "buyer": "Buyer",
+        "name": "Name",
+        "description": "Description",
+        "price": "Price",
+        "royalties": "Royalties",
+        "no-sales": "This items has not been sold yet.",
+        "put-on-sale": "Sell",
+        "you": "You",
+        "sales": "Sales"
+    },
+    "my-nfts": {
+        "empty": "This account does not own any NFT yet.",
+        "find-nfts": "Find NFTs"
+    },
+    "my-nfts-on-sale": {
+        "empty": "This account does not have NFTs on sale.",
+        "find-nfts": "Find NFTs",
+        "create": "Create NFT"
+    },
+    "created": {
+        "empty": "This account has not created any NFT yet.",
+        "create": "Create NFT"
+    },
+    "banner": {
+        "message": "This is a beta version. The development is still in progress."
+    },
+    "four-zero-four": {
+        "message": "Oops... Page not found",
+        "back-to-home": "Go back to home"
+    },
+    "toast": {
+        "success": "Success",
+        "nft-on-sale": "Your NFT is now on sale.",
+        "nft-bought": "You have bought this NFT.",
+        "error": "Error",
+        "generic-error": "An error has occurred.",
+        "file-format-error": "File format not allowed.",
+        "file-too-large-error": "File size too large.",
+        "file-upload-error": "Error uploading file.",
+        "polkadot-extension-disabled": "Polkadot extension is disabled! You need to approve the app in Polkadot-extension!",
+        "polkadot-account-needed": "To use this app you need to create Polkadot account in Polkadot-extension!",
+        "cacelled-by-user": "Operation cancelled by user.",
+        "upload-ipfs-error": "Error uploading file to IPFS.",
+        "create-sale-error": "Error creating NFT sale.",
+        "fetch-nft-error": "An error has occureed getting the NFT.",
+        "fetch-nfts-error": "An error has occureed getting the list of NFTs.",
+        "insufficient-balance-error": "The balance of this account is insufficient."
+    }
+}

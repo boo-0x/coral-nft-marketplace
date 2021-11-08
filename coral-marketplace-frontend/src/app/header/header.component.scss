@@ -1,0 +1,13 @@
+@import '../../assets/scss/variable.scss';
+
+.navbar {
+    .navbar-brand img {
+        max-height: 32px;
+    }
+
+    .navbar-collapse.show .action-buttons {
+        margin-top: .75rem;
+        padding-top: .5rem;
+        border-top: $color-dark 1px solid;
+    }
+}

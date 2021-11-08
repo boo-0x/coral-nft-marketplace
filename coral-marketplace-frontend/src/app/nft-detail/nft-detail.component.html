@@ -1,0 +1,144 @@
+<div *ngIf="nft">
+
+    <div class="row nft-container">
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-img">
+                    <img *ngIf="nft.imageURI" src="{{ nft.imageURI }}">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 pl-lg-5 nft-info">
+            <div class="name mb-2">{{ nft.name }}</div>
+            <div class="card">
+                <div class="card-body p-4">
+                    <div *ngIf="nft.description">
+                        <label class="dimmed">{{ 'nft.description' | translate }}</label>
+                        <span>{{ nft.description }}</span>
+                    </div>
+                    <div class="creator">
+                        <label class="dimmed">{{ 'nft.creator' | translate }}</label>
+                        <span>{{ nft.creator }}</span>
+                        <span *ngIf="nft.creator == currentAddress" class="current-account dimmed">({{ 'nft.you' | translate }})</span>
+                    </div>
+                    <div *ngIf="!nft.onSale" class="owner">
+                        <label class="dimmed">{{ 'nft.owner' | translate }}</label>
+                        <span>{{ nft.owner }}</span> 
+                        <span *ngIf="nft.owner == currentAddress" class="current-account dimmed">({{ 'nft.you' | translate }})</span>
+                    </div>
+                    <div *ngIf="nft.onSale" class="seller">
+                        <label class="dimmed">{{ 'nft.seller' | translate }}</label>
+                        <span>{{ nft.seller }}</span>
+                        <span *ngIf="nft.seller == currentAddress" class="current-account dimmed">({{ 'nft.you' | translate }})</span>
+                    </div>
+                    <div *ngIf="nft.onSale">
+                        <label class="dimmed">{{ 'nft.price' | translate }}</label>
+                        <div class="price">
+                            <img src="./../../assets/img/REEF_logo_small.png">
+                            <span class="reef-price">{{ nft.priceFormatted | number:'1.0-2' }}</span>
+                            <span *ngIf="nft.dollarPrice" class="dimmed dollar-price">(${{ nft.dollarPrice | number:'1.2-2' }})</span>
+                        </div>
+                    </div>      
+                    <div *ngIf="nft.royaltiesAmount">
+                        <label class="dimmed">{{ 'nft.royalties' | translate }}</label>
+                        <span>{{ nft.royaltiesAmount }}%</span>
+                    </div>
+                    <button *ngIf="nft.onSale && nft.seller != currentAddress" class="btn btn-gradient buy-button w-100" (click)="buyNFT()">
+                        {{ 'market.buy' | translate }}
+                    </button>
+                    <button *ngIf="!nft.onSale && nft.owner == currentAddress" class="btn btn-gradient sell-button w-100" (click)="putOnSale()">
+                        {{ 'nft.put-on-sale' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row sales-container">
+        <div class="col-12">
+            <div class="sales mb-2">{{ 'nft.sales' | translate }}</div>
+            <div class="card">
+                <div class="card-body px-5 py-4">
+                    <div *ngIf="!nft.sales.length" class="m-0 text-center no-sales">
+                        {{ 'nft.no-sales' | translate }}
+                    </div>
+                    <div *ngFor="let sale of nft.sales" class="sale">
+                        <div>
+                            <label class="dimmed">{{ 'nft.seller' | translate }}</label>
+                            <span>{{ sale.seller }}</span>
+                            <span *ngIf="sale.seller == currentAddress" class="current-account dimmed">({{ 'nft.you' | translate }})</span>
+                        </div>
+                        <div>
+                            <label class="dimmed">{{ 'nft.buyer' | translate }}</label>
+                            <span>{{ sale.buyer }}</span>
+                            <span *ngIf="sale.buyer == currentAddress" class="current-account dimmed">({{ 'nft.you' | translate }})</span>
+                        </div>
+                        <div>
+                            <label class="dimmed">{{ 'nft.price' | translate }}</label>
+                            <img src="./../../assets/img/REEF_logo_small.png">
+                            <span class="reef-price pr-1">{{ sale.price | number:'1.0-2' }}</span>
+                            <span *ngIf="sale.dollarPrice" class="dimmed dollar-price">(${{ sale.dollarPrice | number:'1.2-2' }})</span>
+                        </div> 
+                        <hr *ngIf="nft.sales.length > 1">
+                    </div>
+                    <div *ngIf="nft.sales.length > 1" class="mt-5">
+                        <app-chart [sales]="nft.sales"></app-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Placeholders -->
+<div *ngIf="!nft">
+
+    <div class="row nft-container">
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-img no-image placeholder-glow"></div>
+            </div>
+        </div>
+        <div class="col-lg-7 pl-lg-5 nft-info">
+            <div class="name mb-2">
+                <span class="placeholder-glow w-50"></span>
+            </div>
+            <div class="card">
+                <div class="card-body p-4">
+                    <div class="card-text">
+                        <span class="placeholder-glow w-75"></span>
+                    </div>
+                    <div class="card-text">
+                        <span class="placeholder-glow w-25"></span>
+                    </div>
+                    <div class="card-text">
+                        <span class="placeholder-glow w-50"></span>
+                    </div>
+                    <div class="card-text">
+                        <span class="placeholder-glow w-25"></span>
+                    </div>
+                    <div class="card-text">
+                        <span class="placeholder-glow w-75"></span>
+                    </div>
+                    <div class="card-text">
+                        <span class="placeholder-glow w-100"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row sales-container">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body px-5 py-4">
+                    <div class="m-0 text-center">
+                        <span class="placeholder-glow w-25"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,74 @@
+.nft-container {
+    max-width: 1300px;
+    margin: auto;
+
+    .card-body {
+        font-size: 1rem;
+
+        > div {
+            margin-bottom: 15px;
+        }
+    }
+
+    .name {
+        font-size: 2.4rem;
+        font-weight: bold;
+    }
+
+    .price {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 24px;
+        }
+
+        .reef-price {
+            font-size: 1.5rem;
+            margin-left: 8px;
+            font-weight: bold;
+        }
+
+        .dollar-price {
+            margin-left: 8px;
+        }
+    }
+
+    .buy-button, .sell-button {
+        font-size: 1rem;
+        width: 140px;
+    }
+
+    label {
+        margin: 0;
+        display: block;
+    }
+}
+
+.sales-container {
+    max-width: 1300px;
+    margin: auto;
+
+    label {
+        display: inline;
+        margin-right: 10px;
+    }
+
+    img {
+        margin-right: 5px;
+        height: 18px;
+    }
+
+    .sales {
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    .no-sales {
+        font-size: 1rem;
+    }
+}
+
+.current-account {
+    margin-left: 10px;
+}

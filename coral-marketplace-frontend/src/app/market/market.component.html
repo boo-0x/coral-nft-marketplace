@@ -1,0 +1,45 @@
+<div class="row">
+
+    <ng-container *ngIf="availableNFTs">
+        <div *ngFor="let nft of availableNFTs" class="col-6 col-md-4 col-lg-3 col-xxl-2">
+            <div class="card">
+                <div class="card-img-top hover-pointer" [ngClass]="{'no-image': !nft.imageURI}" routerLink="/nft/{{nft.itemId}}">
+                    <img *ngIf="nft.imageURI" src="{{ nft.imageURI }}">
+                </div>
+                <div class="card-body">
+                    <div class="card-text nft-name hover-pointer" routerLink="/nft/{{nft.itemId}}">
+                        {{ (nft.name.length>30) ? (nft.name | slice:0:30)+'...' : (nft.name) }}
+                    </div>
+                    <div class="card-text price">
+                        <img src="./../../assets/img/REEF_logo_small.png">
+                        <span>{{ nft.priceFormatted | number:'1.0-2' }}</span>
+                    </div>
+                    <button *ngIf="nft.seller != currentAddress" class="btn btn-gradient buy-button" 
+                        (click)="buyNFT(nft)">{{ 'market.buy' | translate }}</button>
+                    <button *ngIf="nft.seller == currentAddress" class="btn btn-primary view-button" 
+                        routerLink="/nft/{{nft.itemId}}">{{ 'market.view' | translate }}</button>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="!availableNFTs">
+        <div *ngFor="let i of [].constructor(12)" class="col-6 col-md-4 col-lg-3 col-xxl-2">
+            <div class="card">
+                <div class="card-img-top no-image placeholder-glow"></div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <span class="placeholder-glow w-75"></span>
+                    </div>
+                    <div class="card-text">
+                        <span class="placeholder-glow w-25"></span>
+                    </div>
+                    <div class="card-text button-container-loading">
+                        <span class="placeholder-glow w-100 buy-button"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+</div>

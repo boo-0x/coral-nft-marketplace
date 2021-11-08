@@ -1,0 +1,239 @@
+body {
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: left;
+    background-color: $bg-light;
+    color: $color-light;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in;
+
+    .modal-content, .card {
+        border-color: $border-light;
+        background-color: $bg-light;
+    }
+
+    .ngx-file-drop__drop-zone {
+        background-color: $bg-light !important;
+    }
+
+    .address {
+        border-radius: 10px;
+    
+        &:hover {
+            background-color: $bg-light-secondary;
+        }
+    }
+
+    .modal-header button.close {
+        text-shadow: none !important;
+        outline: none !important;
+        color: $color-light !important;
+    }
+
+    .navbar i {
+        color: $color-light !important;
+    }
+
+    form {
+
+        .form-group {
+            margin-bottom: 1.5rem !important;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.3rem !important;
+
+            .required {
+                color: $primary;
+                padding-left: 3px;
+            }
+        }
+
+        input, textarea {
+            border-color: $border-light !important;
+            box-shadow: none !important;
+
+            &.error {
+                border-color: $primary !important;
+            }
+        }
+
+        .mat-slider-track-background {
+            background-color: $border-light !important;
+        }
+    }
+    
+
+    &.dark-theme {
+        background-color: $bg-dark;
+        color: $color-dark;
+
+        .modal-content, .card {
+            border: none;
+            background-color: $bg-dark-secondary;
+        }
+
+        .ngx-file-drop__drop-zone {
+            background-color: $input-dark !important;
+
+            &:hover, &:focus {
+                background-color:$input-dark-hover !important;
+            }
+        }
+
+        .address:hover {
+            background-color: $bg-dark;
+        }
+
+        .modal-header button.close {
+            color: $color-dark !important;
+        }
+
+        form {
+            input, textarea {
+                color: $color-dark !important;
+                background-color: $input-dark !important;
+
+                &:not(.error) {
+                    border: none !important;
+                }
+
+                &:hover, &:focus {
+                    background-color:$input-dark-hover !important;
+                }
+            }
+
+            .mat-slider-track-background {
+                background-color: $input-dark !important;
+            }
+        }
+
+        .sales-container hr {
+            background-color: $bg-dark;
+        }
+    }
+}
+
+.main {
+    padding: 2rem;
+}
+
+.dimmed {
+    color: $color-dimmed;
+}
+
+.modal-footer {
+    border-top: none !important;
+}
+
+.placeholder-glow {
+    display: inline-block;
+    min-height: 1em;
+    vertical-align: middle;
+    cursor: wait;
+    background-color: currentColor;
+    opacity: .5;
+    -webkit-animation: placeholder-glow 2s ease-in-out infinite;
+    animation: placeholder-glow 2s ease-in-out infinite;
+}
+
+.hover-pointer:hover {
+    cursor: pointer;
+}
+
+.ngx-file-drop__drop-zone {
+    border: $primary dashed 2px !important;
+
+    .ngx-file-drop__content {
+        color: $primary !important;
+        flex-direction: column;
+    }
+}
+
+.btn {
+    color: #fff !important;
+
+    &.btn-gradient {
+        background-image: linear-gradient(90deg, $primary 0%, $secondary 50%, $primary 100%) !important;
+        background-size: 200%;
+        transition: all 0.3s ease-in;
+        background-color: transparent !important;
+        border: 0px;
+    
+        &:hover {
+            background-position: right center;
+        }
+    }
+
+    &:focus {
+        box-shadow: none !important;
+    }
+}
+
+.banner {
+    color: $color-dark;
+    background-color: #7334d99d;
+    margin: 2rem 2rem 0 2rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+
+    i {
+        font-size: 1.25rem;
+        padding-right: .5rem;
+    }
+}
+
+.mat-slider-thumb, .mat-slider-thumb-label, .mat-slider-track-fill {
+    background-color: $primary !important;
+}
+
+.mat-slider-thumb-label-text {
+    opacity: 1 !important;
+    color: $color-dark !important
+}
+
+.mat-slider-thumb-label {
+    transform: rotate(45deg) !important;
+    border-radius: 50% 50% 0 !important;
+}
+
+.mat-slider-thumb {
+    transform: scale(0) !important;
+}
+
+#toast-container > div {
+    opacity:1;
+}
+
+.error-msg {
+    color: $primary;
+}
+
+.empty {    
+    img {
+        max-height: 60px;
+    }
+
+    span {
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-left: 10px;
+    }
+}
+
+@keyframes placeholder-glow {
+    50% {
+        opacity: .1;
+    }
+}
+
+@media (min-width: 1400px) {
+    .col-xxl-2 {
+        flex: 0 0 16.6666666667%;
+        max-width: 16.6666666667%;
+    }
+}

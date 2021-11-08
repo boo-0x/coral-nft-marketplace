@@ -1,0 +1,41 @@
+<div class="row">
+
+    <ng-container *ngIf="myNFTs">
+        <div *ngIf="!myNFTs.length" class="col-12 mt-4 empty">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="./../../assets/img/sad.svg">
+                <span>{{ 'my-nfts.empty' | translate }}</span>
+            </div>
+            <div class="d-flex justify-content-center mt-2">
+                <button class="btn btn-primary" routerLink="/market">{{ 'my-nfts.find-nfts' | translate }}</button>
+            </div>
+        </div>
+
+        <div *ngFor="let nft of myNFTs" class="col-6 col-md-4 col-lg-3 col-xxl-2">
+            <div class="card">
+                <div class="card-img-top hover-pointer" [ngClass]="{'no-image': !nft.imageURI}" routerLink="/nft/{{nft.itemId}}">
+                    <img *ngIf="nft.imageURI" src="{{ nft.imageURI }}">
+                </div>
+                <div class="card-body">
+                    <div class="card-text nft-name hover-pointer" routerLink="/nft/{{nft.tokenId}}">
+                        {{ (nft.name.length>30) ? (nft.name | slice:0:30)+'...' : (nft.name) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="!myNFTs">
+        <div *ngFor="let i of [].constructor(12)" class="col-6 col-md-4 col-lg-3 col-xxl-2">
+            <div class="card">
+                <div class="card-img-top no-image placeholder-glow"></div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <span class="placeholder-glow w-75"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+</div>
