@@ -9,8 +9,7 @@ An NFT marketplace for the [Reef Network](https://reef.finance/).
 
 Implements the [EIP-2981: NFT Royalty Standard](https://eips.ethereum.org/EIPS/eip-2981).
 
-[Video demo](https://www.youtube.com/watch?v=zUpJD9R_zao)
-[![Video demo](https://i.imgur.com/DBDwW1b.png)](https://www.youtube.com/watch?v=zUpJD9R_zao)
+[![App](https://i.imgur.com/DBDwW1b.png)](https://coral-marketplace.web.app/)
 
 
 ## Use Coral Marketplace
